@@ -20,7 +20,9 @@ int main()
     cout<<" One Parsing Ends here !"<<endl;
     intObj.delElementAtBeg();
     intObj.ParseList();
-
+    intObj.delFromMiddle(4);
+    cout<<" One Parsing Ends here !"<<endl;
+    intObj.ParseList();
 
     return 0;
 }

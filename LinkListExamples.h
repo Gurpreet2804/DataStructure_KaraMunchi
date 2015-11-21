@@ -22,6 +22,7 @@ public:
     void AddElementAtBeg(const T & data);
     void delElementAtEnd();
     void delElementAtBeg();
+    void delFromMiddle(const T &data);
 };
 
 template<typename T>
@@ -101,6 +102,35 @@ void LinkListExamples<T>::delElementAtBeg()
         SingleLink<T> * temp = head;
         head = temp->next;
         delete temp;
+    }
+}
+template<typename T>
+void LinkListExamples<T>::delFromMiddle(const T &data)
+{
+    if (head == NULL){
+        cout<<" List Empty";
+        return;
+    }
+    else {
+        SingleLink<T> * temp = head;
+        SingleLink<T> * temp1 = head;
+        while(temp->next != NULL) {
+            if (temp->data == data) {
+                break;
+            }
+            temp1 = temp;
+            temp = temp->next;
+        }
+        if (head == temp) {
+            delElementAtBeg();
+        }
+        else if (temp->next == NULL) {
+            delElementAtEnd();
+        }
+        else {
+            temp1->next = temp->next;
+            delete temp;
+        }
     }
 }
 
