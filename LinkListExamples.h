@@ -1,7 +1,6 @@
 #ifndef LINKLISTEXAMPLES_H
 #define LINKLISTEXAMPLES_H
 #include "iostream"
-#include <algorithm>
 using namespace std;
 template <typename T>
 struct SingleLink {
